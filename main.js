@@ -18,11 +18,8 @@ const fsSource = `
 
   void main() {
     vec2 uv = gl_FragCoord.xy / u_resolution;
-    gl_FragColor = vec4(
-      0.3 + 0.7 * (sin(uv.x + u_time / 1000.0) + 1.0) / 2.0,
-      0.0,
-      0.3 + 0.7 * (cos(uv.y + u_time / 500.0) + 1.0) / 2.0,
-      1.0);
+    vec3 col = 0.5 + 0.5 * cos(u_time + uv.xyx + vec3(0, 2, 4));
+    gl_FragColor = vec4(col, 1.0);
   }
 `
 

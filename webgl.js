@@ -68,7 +68,7 @@ export class WebGL {
     this.gl.clear(this.gl.COLOR_BUFFER_BIT)
 
     const now = new Date()
-    const time = now - this.start
+    const time = (now - this.start) / 1000
     const uTime = this.gl.getUniformLocation(this.shaderProgram, 'u_time')
     this.gl.uniform1f(uTime, parseFloat(time))
 
